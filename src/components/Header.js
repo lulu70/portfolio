@@ -1,6 +1,7 @@
 import React from 'react'
-import sFLogo from '../assets/logo/logo_white.png'
-import { Divider, Grid, Image } from 'semantic-ui-react'
+import { Divider, Grid } from 'semantic-ui-react'
+import HeaderLogo from './HeaderLogo';
+import LogosBox from './LogosBox';
 
 const Header = () => (
   <Grid centered>
@@ -14,21 +15,10 @@ const Header = () => (
         }}
       >
         <Divider hidden />
-        <Image src={sFLogo} size="small" />
-        <Divider hidden />
-        <p
-          style={{
-            fontSize: '1.5rem'
-          }}
-        >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-          minima atque facilis numquam commodi officiis accusantium asperiores
-          placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-          reiciendis cum possimus ipsam quis. Quam vero sapiente, obcaecati
-          recusandae blanditiis provident rem nisi alias quia veniam non fugit
-          cumque asperiores at aliquam voluptatibus.
-        </p>
-        <Divider hidden />
+        <HeaderLogo />
+        <h1 style={{ fontSize: '4rem' }}>LIOR COHEN</h1>
+        <p style={{ fontSize: '1.5rem', color: '#6fef99' }}>CODER ,  WEB DEVELOPER</p>
+        <LogosBox logos={['mail','facebook square','linkedin']} size="large"/>
       </div>
     </Grid.Column>
   </Grid>

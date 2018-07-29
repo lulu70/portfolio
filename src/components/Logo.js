@@ -12,7 +12,7 @@ const colors = {
   'node js': '#689f62',
   wordpress: '#d7dadf'
 }
-const Logo = ({ logo }) => {
+const Logo = ({ logo, size }) => {
   switch (logo) {
     case 'redux':
       return <Image src={reduxLogo} style={{ height: '29px' }} />
@@ -20,12 +20,10 @@ const Logo = ({ logo }) => {
       return <Image src={firebaseLogo} style={{ height: '29px' }} />
     case 'electron':
       return <Image src={electronLogo} style={{ height: '29px' }} />
-      case 'p5':
+    case 'p5':
       return <Image src={p5Logo} style={{ height: '29px' }} />
     default:
-      return (
-        <Icon name={logo} size="big" style={{ color: colors[logo] }} />
-      )
+      return <Icon name={logo} size={size || 'big'} style={{ color: colors[logo] }} />
   }
 }
 export default Logo

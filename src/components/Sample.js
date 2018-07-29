@@ -101,7 +101,7 @@ class Sample extends Component {
                 <p>{this.props.description}</p>
               </div>
               <div className="logos">
-                <LogosBox logos={this.props.logos} />
+                <LogosBox logos={this.props.logos }/>
               </div>
             </div>
           </Grid.Column>
