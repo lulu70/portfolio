@@ -10,7 +10,9 @@ const colors = {
   css3: '#34a9dd',
   react: '#60dbfc',
   'node js': '#689f62',
-  wordpress: '#d7dadf'
+  wordpress: '#d7dadf',
+  'facebook official': 'white',
+  mail: 'white'
 }
 const Logo = ({ logo, size }) => {
   switch (logo) {
@@ -22,8 +24,39 @@ const Logo = ({ logo, size }) => {
       return <Image src={electronLogo} style={{ height: '29px' }} />
     case 'p5':
       return <Image src={p5Logo} style={{ height: '29px' }} />
+    case 'facebook official':
+      return (
+        <a
+          href="https://www.facebook.com/lior2"
+          target="blank"
+        >
+          <Icon
+            name={logo}
+            size={size || 'big'}
+            style={{ color: colors[logo] }}
+          />
+        </a>
+      )
+      case 'mail' : 
+      return (
+        <a
+          href="mailto:liorco7079@gmail?subject=Mail from SAFE FRAME website"
+        >
+          <Icon
+            name={logo}
+            size={size || 'big'}
+            style={{ color: colors[logo] }}
+          />
+        </a>
+      )
     default:
-      return <Icon name={logo} size={size || 'big'} style={{ color: colors[logo] }} />
+      return (
+        <Icon
+          name={logo}
+          size={size || 'big'}
+          style={{ color: colors[logo] }}
+        />
+      )
   }
 }
 export default Logo

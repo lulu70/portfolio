@@ -17,8 +17,8 @@ const Header = () => (
         <Divider hidden />
         <HeaderLogo />
         <h1 style={{ fontSize: '4rem' }}>LIOR COHEN</h1>
-        <p style={{ fontSize: '1.5rem', color: '#6fef99' }}>CODER ,  WEB DEVELOPER</p>
-        <LogosBox logos={['mail','facebook square','linkedin']} size="large"/>
+        <p style={{ fontSize: '1.5rem' }} className="secondary-color">CODER ,  WEB DEVELOPER</p>
+        <LogosBox logos={['mail','facebook official']} size="large"/>
       </div>
     </Grid.Column>
   </Grid>

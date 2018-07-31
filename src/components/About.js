@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid, Image, Divider } from 'semantic-ui-react'
 import avatar from '../assets/avatar.png'
 const About = () => (
-  <Grid style={{ background: 'white', color: '#1e2736' }} centered>
+  <Grid style={{ background: 'white' }} className="primary-color" centered>
     <Grid.Row>
       <Grid.Column width={10} textAlign="center">
         <Image

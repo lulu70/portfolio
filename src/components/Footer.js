@@ -9,7 +9,7 @@ const Footer = () => (
         <Grid.Column width={14}>
           <h1>Lior Cohen</h1>
           <a
-            href="mailto:liorco7079@gmail"
+            href="mailto:liorco7079@gmail?subject=Mail from SAFE FRAME website"
             style={{ color: '#6fef99', cursor: 'pointer' }}
           >
             liorco7079@gmail.com
