@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Icon } from 'semantic-ui-react'
+import { Icon, Popup } from 'semantic-ui-react'
+
 const SpotifyLoginButton = props => {
   const hadleButtonClick = e => {
     e.preventDefault()
@@ -10,22 +11,43 @@ const SpotifyLoginButton = props => {
   }
   return (
     !props.loggedIn && (
-      <div
-        onClick={hadleButtonClick}
-        className="secondary-color"
-        style={{
-          cursor: 'pointer',
-          background: 'black',
-          display: 'inline-flex',
-          justifyContent: 'center',
-          textAlign: 'center',
-          padding: '1rem',
-          fontSize: '1rem',
-          borderRadius: '50%',
-        }}
+      <Popup
+        inverted
+        trigger={
+          <div
+            onClick={hadleButtonClick}
+            className="secondary-color"
+            style={{
+              cursor: 'pointer',
+              background: 'black',
+              display: 'inline-flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              padding: '0.3rem'
+            }}
+          >
+            <Icon name="spotify" size="large" style={{ margin: 0 }} />
+            <div>
+              <div style={{ fontSize: '0.7rem' }}>Listen to music on</div>
+              <h6 style={{ margin: 0 }}>Spotify</h6>
+            </div>
+          </div>
+        }
       >
-        <Icon name="spotify" size="big" style={{margin: 0}}/> 
-      </div>
+        <Popup.Content>
+          <div
+            className="secondary-color"
+            style={{
+              fontFamily: 'Montserrat, sans-serif',
+              textAlign: 'center'
+            }}
+          >
+            Log in and approve the app to listen to music from your own
+            spotify library
+          </div>
+        </Popup.Content>
+      </Popup>
     )
   )
 }

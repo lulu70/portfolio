@@ -31,7 +31,7 @@ const Footer = () => (
           </p>
         </Grid.Column>
         <Grid.Column width={4} />
-        <Grid.Column width={4} verticalAlign="bottom" textAlign="right" >
+        <Grid.Column width={4} verticalAlign="bottom" textAlign="right" only="computer" >
           <SpotifyLoginButton />
         </Grid.Column>
       </Grid.Row>

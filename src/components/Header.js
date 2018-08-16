@@ -6,6 +6,7 @@ import SpotifyButton from './SpotifyButton'
 
 const Header = () => (
   <Grid centered>
+  <Grid.Column width={1}/>
     <Grid.Column width={14}>
       <div
         style={{
@@ -22,17 +23,20 @@ const Header = () => (
           CODER , WEB DEVELOPER
         </p>
         <LogosBox logos={['mail', 'facebook official']} size="large" />
-        <div
+      </div>
+    </Grid.Column>
+    <Grid.Column width={1} only="computer">
+    <div
           style={{
             display: 'flex',
             flexDirection: 'column',
             position: 'absolute',
-            right: '0'
+            right: '2rem',
+            top: '2rem'
           }}
         >
           <SpotifyButton />
         </div>
-      </div>
     </Grid.Column>
   </Grid>
 )

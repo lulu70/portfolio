@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import spotify from './reducers/spotify'
+import spotify from './reducers/spotifyReducer'
 const reducers = combineReducers({
   spotify
 })
