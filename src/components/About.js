@@ -4,7 +4,7 @@ import avatar from '../assets/avatar.png'
 const About = () => (
   <Grid style={{ background: 'white' }} className="primary-color" centered>
     <Grid.Row>
-      <Grid.Column width={10} textAlign="center">
+      <Grid.Column computer={10} mobile={14} textAlign="center">
         <Image
           src={avatar}
           circular
@@ -28,7 +28,7 @@ const About = () => (
     </Grid.Row>
     <Divider hidden />
     <Grid.Row>
-      <Grid.Column width={4} textAlign="center">
+      <Grid.Column computer={4} tablet={4} mobile={14}textAlign="center">
         <h1>Title-1</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
@@ -36,16 +36,16 @@ const About = () => (
           accusamus consequuntur dolor.
         </p>
       </Grid.Column>
-      <Grid.Column width={1} />
-      <Grid.Column width={4} textAlign="center">
+      <Grid.Column computer={1} tablet={1}/>
+      <Grid.Column computer={4} tablet={4} mobile={14} textAlign="center">
         <h1>Title-2</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ratione
           nemo libero nulla eos, tempore accusamus in harum corporis voluptatem?
         </p>
       </Grid.Column>
-      <Grid.Column width={1} />
-      <Grid.Column width={4} textAlign="center">
+      <Grid.Column computer={1} tablet={1}/>
+      <Grid.Column computer={4} tablet={4} mobile={14} textAlign="center">
         <h1>Title-3</h1>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam ab rem

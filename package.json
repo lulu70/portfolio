@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://leoniko.net/portfolio",
+  "homepage": "http://leoniko.net/",
   "devDependencies": {
     "react-scripts": "1.1.4",
     "redux-devtools-extension": "^2.13.5"

@@ -1,38 +1,38 @@
 import React from 'react'
 import CreditBatch from './CreditBatch'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Divider } from 'semantic-ui-react'
+import SpotifyLoginButton from './SpotifyLoginButton'
 
 const Footer = () => (
   <div style={{ width: '100%', minHeight: '10rem', marginTop: '14px' }}>
     <Grid centered>
       <Grid.Row>
-        <Grid.Column width={14}>
+        <Grid.Column width={6}>
           <h1>Lior Cohen</h1>
           <a
-            href="mailto:liorco7079@gmail?subject=Mail from SAFE FRAME website"
+            href="mailto:info@leoniko.net?subject=Mail from SAFE FRAME website"
             style={{ color: '#6fef99', cursor: 'pointer' }}
           >
-            liorco7079@gmail.com
+            info@leoniko.net
           </a>
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={6}>
+          <Divider hidden />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            dignissimos dolorum dolorem sit eveniet debitis.
+            dignissimos dolorum dolorem sit eveniet debitis. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Explicabo dignissimos dolorum
+            dolorem sit eveniet debitis. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Explicabo
           </p>
-        </Grid.Column>
-        <Grid.Column width={8} />
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column width={14}>
-          <p style={{fontSize:'0.8rem'}}>
+          <p style={{ fontSize: '0.8rem' }}>
             Background Photo by :
             <span>
               <CreditBatch />
             </span>
           </p>
+        </Grid.Column>
+        <Grid.Column width={4} />
+        <Grid.Column width={4} verticalAlign="bottom" textAlign="right" >
+          <SpotifyLoginButton />
         </Grid.Column>
       </Grid.Row>
     </Grid>

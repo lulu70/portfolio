@@ -40,7 +40,7 @@ const Logo = ({ logo, size }) => {
       case 'mail' : 
       return (
         <a
-          href="mailto:liorco7079@gmail?subject=Mail from SAFE FRAME website"
+          href="mailto:info@leoniko.net?subject=Mail from SAFE FRAME website"
         >
           <Icon
             name={logo}
