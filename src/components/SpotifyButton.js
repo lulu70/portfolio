@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import queryString from 'query-string'
-import { Icon } from 'semantic-ui-react'
+import { Loader, Dimmer, Dropdown } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 
 class SpotifyButton extends Component {
@@ -10,11 +10,11 @@ class SpotifyButton extends Component {
   }
   componentDidUpdate(preProps) {
     if (preProps.loggedIn !== this.props.loggedIn) {
-      this.fatchData()
+      this.fetchData()
     }
   }
 
-  fatchData = async () => {
+  fetchData = async () => {
     const headers = {
       Accept: 'application/json',
       Authorization: `Bearer ${this.props.token}`,
@@ -22,15 +22,21 @@ class SpotifyButton extends Component {
     }
     try {
       //trying to get playlists:
-      let response = await fetch(`https://api.spotify.com/v1/me/playlists`, {
-        headers
-      })
+      let response = await fetch(
+        `https://api.spotify.com/v1/me/playlists?limit=50`,
+        {
+          headers
+        }
+      )
       let json = await response.json()
       if (json.items.length === 0) {
         // if there are no playlists => trying to get albums:
-        response = await fetch(`https://api.spotify.com/v1/me/albums`, {
-          headers
-        })
+        response = await fetch(
+          `https://api.spotify.com/v1/me/albums?limit=50`,
+          {
+            headers
+          }
+        )
         json = await response.json()
         this.props.changeMediaType('albums')
       }
@@ -59,7 +65,6 @@ class SpotifyButton extends Component {
         }
       }
       const items = json.items
-      items.length === 1 && this.props.setStateToOnlyOneItem()
       const itemIndex = 0
       const item = json.items[itemIndex]
       const userId = this.props.mediaType === 'playlists' ? item.owner.id : ''
@@ -74,18 +79,9 @@ class SpotifyButton extends Component {
       console.log(error)
     }
   }
-
-  handleItemChangeClick = (e, name) => {
-    e.preventDefault()
-    const newIndex =
-      name === 'forward'
-        ? this.props.itemIndex === this.props.items.length - 1
-          ? 0
-          : this.props.itemIndex + 1
-        : this.props.itemIndex === 0
-          ? this.props.items.length - 1
-          : this.props.itemIndex - 1
-
+  handleItemSelect = (e, { value }) => {
+    value !== this.props.itemIndex && this.props.spotifyButtonLoaded(false)
+    const newIndex = value
     const newItem = this.props.items[newIndex]
     const userId = this.props.mediaType === 'playlists' ? newItem.owner.id : ''
     const itemId =
@@ -96,13 +92,13 @@ class SpotifyButton extends Component {
           : newItem.track.id
     this.props.changeItem(userId, itemId, newIndex)
   }
-
+  capitalize = string => string[0].toUpperCase() + string.slice(1)
   render() {
     return (
       this.props.itemId && (
         <React.Fragment>
           <iframe
-            onLoad={this.props.spotifyButtonLoaded}
+            onLoad={() => this.props.spotifyButtonLoaded(true)}
             title="spotify-button"
             src={
               this.props.mediaType === 'playlists'
@@ -119,54 +115,56 @@ class SpotifyButton extends Component {
             allowtransparency="true"
             allow="encrypted-media"
           />
-          {this.props.hasLoaded &&
-            (this.props.onlyOneItem === false ||
-              this.props.mediaType === 'none') && (
-              <div
-                className="secondary-color"
-                style={{
-                  display: 'inline-flex',
-                  width: '300px',
-                  justifyContent:
-                    this.props.mediaType === 'none'
-                      ? 'center'
-                      : 'space-between',
-                  background: 'black',
-                  fontSize: '1rem'
-                }}
-              >
-                {this.props.mediaType !== 'none' && (
-                  <Icon
-                    link
-                    name="backward"
-                    onClick={e => this.handleItemChangeClick(e, 'back')}
-                  />
-                )}
 
-                <span>
-                  {this.props.mediaType === 'playlists'
-                    ? 'Change Playlist'
+          {!this.props.hasLoaded ? (
+            <Dimmer active>
+              <Loader indeterminate>{`Loading ${
+                this.props.mediaType !== 'none' ? this.props.mediaType : ''
+              }...`}</Loader>
+            </Dimmer>
+          ) : this.props.mediaType !== 'none' ? (
+            <Dropdown
+              placeholder={`Change ${this.capitalize(this.props.mediaType)}`}
+              button
+              selection
+              scrolling
+              fluid
+              style={{
+                color: 'white',
+                background: 'black',
+                borderRadius: '0'
+              }}
+              selectOnBlur={false}
+              onChange={this.handleItemSelect}
+              options={this.props.items.map((item, i) => ({
+                key: item.name,
+                text:
+                  this.props.mediaType === 'playlists'
+                    ? item.name
                     : this.props.mediaType === 'albums'
-                      ? 'Change Album'
+                      ? item.album.name
                       : this.props.mediaType === 'tracks'
-                        ? 'Change Track'
-                        : 'Couldnt Get Music From Your Library'}
-                </span>
-                {this.props.mediaType !== 'none' && (
-                  <Icon
-                    link
-                    name="forward"
-                    onClick={e => this.handleItemChangeClick(e, 'forward')}
-                  />
-                )}
-              </div>
-            )}
+                        ? item.track.name
+                        : '',
+                value: i
+              }))}
+            />
+          ) : (
+            <span
+              style={{
+                fontSize: '1.1rem',
+                background: 'black',
+                textAlign: 'center'
+              }}
+            >
+              Couldnt Get Music From Your Library
+            </span>
+          )}
         </React.Fragment>
       )
     )
   }
 }
-
 const mapStateToProps = state => ({
   token: state.spotify.token,
   loggedIn: state.spotify.loggedIn,
@@ -175,8 +173,7 @@ const mapStateToProps = state => ({
   userId: state.spotify.userId,
   itemId: state.spotify.itemId,
   hasLoaded: state.spotify.hasLoaded,
-  mediaType: state.spotify.mediaType,
-  onlyOneItem: state.spotify.onlyOneItem
+  mediaType: state.spotify.mediaType
 })
 const mapDispatchToProps = dispatch => ({
   setToken: token => {
@@ -202,20 +199,16 @@ const mapDispatchToProps = dispatch => ({
       itemIndex
     })
   },
-  spotifyButtonLoaded: () => {
+  spotifyButtonLoaded: state => {
     dispatch({
-      type: 'SPOTIFY_BUTTON_LOADED'
+      type: 'SPOTIFY_BUTTON_LOADED',
+      state
     })
   },
   changeMediaType: mediaType => {
     dispatch({
       type: 'CHANGE_MEDIA_TYPE',
       mediaType
-    })
-  },
-  setStateToOnlyOneItem: () => {
-    dispatch({
-      type: 'ONLY_ONE_ITEM'
     })
   }
 })

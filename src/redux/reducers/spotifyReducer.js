@@ -6,8 +6,7 @@ const initialState = {
   itemIndex: '',
   userId: '',
   itemId: '',
-  hasLoaded: false,
-  onlyOneItem: false
+  hasLoaded: false
 }
 
 const spotify = (state = initialState, action) => {
@@ -39,19 +38,13 @@ const spotify = (state = initialState, action) => {
     case 'SPOTIFY_BUTTON_LOADED': {
       return {
         ...state,
-        hasLoaded: true
+        hasLoaded: action.state
       }
     }
     case 'CHANGE_MEDIA_TYPE': {
       return {
         ...state,
         mediaType: action.mediaType
-      }
-    }
-    case 'ONLY_ONE_ITEM': {
-      return {
-        ...state,
-        onlyOneItem: true
       }
     }
     default: {
