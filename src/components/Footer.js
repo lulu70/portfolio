@@ -16,13 +16,13 @@ const Footer = () => (
             info@leoniko.net
           </a>
           <Divider hidden />
-          <p>
+          {/* <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
             dignissimos dolorum dolorem sit eveniet debitis. Lorem ipsum dolor
             sit amet consectetur adipisicing elit. Explicabo dignissimos dolorum
             dolorem sit eveniet debitis. Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Explicabo
-          </p>
+          </p> */}
           <p style={{ fontSize: '0.8rem' }}>
             Background Photo by :
             <span>

@@ -13,6 +13,7 @@ const SpotifyLoginButton = props => {
     !props.loggedIn && (
       <Popup
         inverted
+        position="top center"
         trigger={
           <div
             onClick={hadleButtonClick}

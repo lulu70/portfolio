@@ -5,6 +5,7 @@ const About = () => (
   <Grid style={{ background: 'white' }} className="primary-color" centered>
     <Grid.Row>
       <Grid.Column computer={10} mobile={14} textAlign="center">
+      <h1>Hi I'm Lior</h1>
         <Image
           src={avatar}
           circular
@@ -13,21 +14,22 @@ const About = () => (
           style={{ border: 'solid 3px #1e2736' }}
         />
         <Divider hidden />
-        <h1>PERSONAL DETAILS</h1>
         <p
           style={{
             fontSize: '1.5rem'
           }}
         >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-          minima atque facilis numquam commodi officiis accusantium asperiores
-          placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-          reiciendis cum possimus ipsam quis. Quam vero sapiente
+          I've made this website to show some of my work as a web
+          developer.
+          <br />
+          It has some examples of websites and projects that I did
+          <br />
+          Check it out and contact me for anything.
         </p>
       </Grid.Column>
     </Grid.Row>
     <Divider hidden />
-    <Grid.Row>
+    {/* <Grid.Row>
       <Grid.Column computer={4} tablet={4} mobile={14}textAlign="center">
         <h1>Title-1</h1>
         <p>
@@ -53,7 +55,7 @@ const About = () => (
           sint laboriosam!
         </p>
       </Grid.Column>
-    </Grid.Row>
+    </Grid.Row> */}
     <Divider hidden />
   </Grid>
 )

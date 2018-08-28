@@ -63,16 +63,20 @@ class Sample extends Component {
             >
               <div className="text">
                 <h1>{this.props.title}</h1>
-                <p>{this.props.description}</p>
+                {this.props.description}
               </div>
               <div className="logos">
                 <LogosBox logos={this.props.logos} />
               </div>
             </div>
           </Grid.Column>
-          <Grid.Column width={1}/>
+          <Grid.Column width={1} />
         </Grid.Row>
         <Grid.Row only="mobile tablet" centered>
+          <div className="text">
+            <h1>{this.props.title}</h1>
+            {this.props.description}
+          </div>
           <Grid.Column verticalAlign="middle" width={16}>
             <Dimmer.Dimmable
               blurring
@@ -96,12 +100,8 @@ class Sample extends Component {
                 height: '100%'
               }}
             >
-              <div className="text">
-                <h1>{this.props.title}</h1>
-                <p>{this.props.description}</p>
-              </div>
               <div className="logos">
-                <LogosBox logos={this.props.logos }/>
+                <LogosBox logos={this.props.logos} />
               </div>
             </div>
           </Grid.Column>
