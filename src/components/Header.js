@@ -34,7 +34,7 @@ class Header extends Component {
       <MotionTest>
         {() => {
           return (
-            <Grid centered>
+            <Grid centered padded>
               <Grid.Column width={1} />
               <Grid.Column width={14}>
                 <div

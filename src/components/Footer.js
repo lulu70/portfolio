@@ -5,7 +5,7 @@ import SpotifyLoginButton from './SpotifyLoginButton'
 
 const Footer = () => (
   <div style={{ width: '100%', minHeight: '10rem', marginTop: '14px' }}>
-    <Grid centered>
+    <Grid centered padded>
       <Grid.Row>
         <Grid.Column width={6}>
           <h1>Lior Cohen</h1>
@@ -16,13 +16,13 @@ const Footer = () => (
             info@leoniko.net
           </a>
           <Divider hidden />
-          {/* <p>
+          <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
             dignissimos dolorum dolorem sit eveniet debitis. Lorem ipsum dolor
             sit amet consectetur adipisicing elit. Explicabo dignissimos dolorum
             dolorem sit eveniet debitis. Lorem ipsum dolor sit amet consectetur
             adipisicing elit. Explicabo
-          </p> */}
+          </p>
           <p style={{ fontSize: '0.8rem' }}>
             Background Photo by :
             <span>

@@ -30,6 +30,7 @@ class Sample extends Component {
     )
     return (
       <Grid
+        padded
         style={{
           background: `rgba(255, 255, 255, ${
             this.props.bg === 'dark' ? '0' : '0.1'
