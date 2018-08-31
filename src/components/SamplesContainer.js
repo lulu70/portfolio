@@ -52,10 +52,10 @@ class SamplesContainer extends Component {
         </div>
         <Transition
           keys={this.state.samples.map((sample, i) => i)}
-          config={{ tension: 180, friction: 26 }}
+          // config={{ tension: 180, friction: 26 }}
           from={{ opacity: 0, maxHeight: 0 }}
           leave={{ opacity: 0, maxHeight: 0 }}
-          enter={{ opacity: 1, maxHeight: 700 }}
+          enter={{ opacity: 1, maxHeight: 1000 }}
         >
           {this.state.samples.map(sample => styles => (
             <div style={{ ...styles }}>{sample}</div>
