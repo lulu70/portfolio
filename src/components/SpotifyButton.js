@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import queryString from 'query-string'
 import { Loader, Dimmer, Dropdown } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+import SpotifyIcon from './SpotifyIcon'
 
 class SpotifyButton extends Component {
   componentDidMount() {
@@ -118,6 +119,10 @@ class SpotifyButton extends Component {
 
           {!this.props.hasLoaded ? (
             <Dimmer active>
+              <SpotifyIcon
+                color="#fff"
+                style={{ position: 'absolute', top: '8px', right: '8px' }}
+              />
               <Loader indeterminate>{`Loading ${
                 this.props.mediaType !== 'none' ? this.props.mediaType : ''
               }...`}</Loader>

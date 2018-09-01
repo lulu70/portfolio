@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Divider, Grid } from 'semantic-ui-react'
 import LogosBox from './LogosBox'
 import SpotifyButton from './SpotifyButton'
+import SpotifyLoginButton from './SpotifyLoginButton';
 
 class Header extends Component {
   state = {
@@ -41,7 +42,7 @@ class Header extends Component {
               alignItems: 'center'
             }}
           >
-            <Divider hidden />
+            {/* <Divider hidden /> */}
             <h1 style={{ fontSize: '4rem' }}>LIOR COHEN</h1>
             <p style={{ fontSize: '1.5rem' }} className="secondary-color">
               CODER
@@ -61,6 +62,7 @@ class Header extends Component {
               zIndex: 1
             }}
           >
+          <SpotifyLoginButton />
             <SpotifyButton />
           </div>
         </Grid.Column>

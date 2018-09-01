@@ -6,7 +6,8 @@ const initialState = {
   itemIndex: '',
   userId: '',
   itemId: '',
-  hasLoaded: false
+  hasLoaded: false,
+  loading: false
 }
 
 const spotify = (state = initialState, action) => {
@@ -45,6 +46,12 @@ const spotify = (state = initialState, action) => {
       return {
         ...state,
         mediaType: action.mediaType
+      }
+    }
+    case'SPOTIFY_LOGIN_BUTTON_TOOGLE_ANIMATION' : {
+      return {
+        ...state,
+        loading: !state.loading
       }
     }
     default: {

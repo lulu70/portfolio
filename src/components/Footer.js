@@ -1,7 +1,6 @@
 import React from 'react'
 import CreditBatch from './CreditBatch'
 import { Grid, Divider } from 'semantic-ui-react'
-import SpotifyLoginButton from './SpotifyLoginButton'
 
 const Footer = () => (
   <div style={{ width: '100%', minHeight: '10rem', marginTop: '14px' }}>
@@ -31,9 +30,12 @@ const Footer = () => (
           </p>
         </Grid.Column>
         <Grid.Column width={4} />
-        <Grid.Column width={4} verticalAlign="bottom" textAlign="right" only="computer" >
-          <SpotifyLoginButton />
-        </Grid.Column>
+        <Grid.Column
+          width={4}
+          verticalAlign="bottom"
+          textAlign="right"
+          only="computer"
+        />
       </Grid.Row>
     </Grid>
   </div>
