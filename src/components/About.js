@@ -1,17 +1,23 @@
 import React from 'react'
 import { Grid, Image, Divider } from 'semantic-ui-react'
 import avatar from '../assets/avatar.png'
+import { defaultStyle, primaryStyle, colors } from '../styles/styles'
+
 const About = () => (
-  <Grid padded style={{ background: 'white' }} className="primary-color" centered>
+  <Grid
+    padded
+    style={{ ...primaryStyle, background: 'white' }}
+    centered
+  >
     <Grid.Row>
       <Grid.Column computer={10} mobile={14} textAlign="center">
-      <h1>Hi I'm Lior</h1>
+        <h1 style={defaultStyle}>Hi I'm Lior</h1>
         <Image
           src={avatar}
           circular
           size="small"
           centered
-          style={{ border: 'solid 3px #1e2736' }}
+          style={{ border: `solid 3px ${colors.primary}` }}
         />
         <Divider hidden />
         <p
@@ -19,8 +25,7 @@ const About = () => (
             fontSize: '1.5rem'
           }}
         >
-          I've made this website to show some of my work as a web
-          developer.
+          I've made this website to show some of my work as a web developer.
           <br />
           It has some examples of websites and projects that I did
           <br />

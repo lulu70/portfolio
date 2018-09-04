@@ -3,6 +3,7 @@ import { Divider, Grid } from 'semantic-ui-react'
 import LogosBox from './LogosBox'
 import SpotifyButton from './SpotifyButton'
 import SpotifyLoginButton from './SpotifyLoginButton';
+import { defaultStyle, secondaryStyle } from '../styles/styles'
 
 class Header extends Component {
   state = {
@@ -43,8 +44,8 @@ class Header extends Component {
             }}
           >
             {/* <Divider hidden /> */}
-            <h1 style={{ fontSize: '4rem' }}>LIOR COHEN</h1>
-            <p style={{ fontSize: '1.5rem' }} className="secondary-color">
+            <h1 style={{ ...defaultStyle, fontSize: '4rem' }}>LIOR COHEN</h1>
+            <p style={{...secondaryStyle, fontSize: '1.5rem' }}>
               CODER
             </p>
             <LogosBox logos={['mail', 'facebook official']} size="large" />

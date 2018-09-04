@@ -1,12 +1,11 @@
 import React from 'react'
 
-const SpotifyIcon = ({ color, style = {}, size = 18, deg=0 }) => (
+const SpotifyIcon = ({ color, style = {}, size = 18 }) => (
   <svg
     viewBox="0 0 64 64"
     width={size}
     height={size}
     style={style}
-    transform={`rotate(${deg})`}
   >
     <path
       fill={color}

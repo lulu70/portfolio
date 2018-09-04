@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { Grid, Image, Dimmer, Button } from 'semantic-ui-react'
 import LogosBox from './LogosBox'
 import { Spring, config } from 'react-spring'
-
+import { defaultStyle } from '../styles/styles'
 class Sample extends Component {
   state = {
-    dimmed: false,
-    fontFamily: 'Montserrat, sans-serif'
+    dimmed: false
   }
   handleShowDimmer = () => this.setState({ ...this.state, dimmed: true })
   handleHideDimmer = () => this.setState({ ...this.state, dimmed: false })
@@ -21,8 +20,8 @@ class Sample extends Component {
           color="black"
           size="big"
           style={{
-            fontSize: '2rem',
-            fontFamily: this.state.fontFamily
+            ...defaultStyle,
+            fontSize: '2rem'
           }}
         >
           SEE PROJECT
@@ -48,7 +47,11 @@ class Sample extends Component {
             {/* ### COMPUTER ROW ### */}
 
             <Grid.Row
-              style={{ transform: `scale(${styles.scale})` }}
+              style={{
+                transform: `scale(${styles.scale})`,
+                WebkitTransform: `scale(${styles.scale})`,
+                MsTransform: `scale(${styles.scale})`
+              }}
               only="computer"
             >
               <Dimmer
@@ -83,7 +86,7 @@ class Sample extends Component {
                   }}
                 >
                   <div className="text">
-                    <h1>{this.props.title}</h1>
+                    <h1 style={defaultStyle}>{this.props.title}</h1>
                     {this.props.description}
                   </div>
                   <div className="logos">
@@ -95,10 +98,7 @@ class Sample extends Component {
             </Grid.Row>
 
             {/* ### MOBILE ROW ### */}
-            <Grid.Row
-              only="tablet mobile"
-              centered
-            >
+            <Grid.Row only="tablet mobile" centered>
               <Grid.Column
                 textAlign="center"
                 width={14}
@@ -114,7 +114,7 @@ class Sample extends Component {
                   }}
                 >
                   <div className="text">
-                    <h1>{this.props.title}</h1>
+                    <h1 style={defaultStyle}>{this.props.title}</h1>
                     {this.props.description}
                   </div>
                   <div className="logos">
@@ -122,7 +122,7 @@ class Sample extends Component {
                   </div>
                 </div>
               </Grid.Column>
-              <Grid.Column verticalAlign="middle" width={14} >
+              <Grid.Column verticalAlign="middle" width={14}>
                 <Dimmer.Dimmable
                   blurring
                   as={Image}

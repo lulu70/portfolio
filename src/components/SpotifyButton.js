@@ -3,6 +3,7 @@ import queryString from 'query-string'
 import { Loader, Dimmer, Dropdown } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import SpotifyIcon from './SpotifyIcon'
+import { defaultStyle } from '../styles/styles'
 
 class SpotifyButton extends Component {
   componentDidMount() {
@@ -123,7 +124,7 @@ class SpotifyButton extends Component {
                 color="#fff"
                 style={{ position: 'absolute', top: '8px', right: '8px' }}
               />
-              <Loader indeterminate>{`Loading ${
+              <Loader indeterminate style={defaultStyle}>{`Loading ${
                 this.props.mediaType !== 'none' ? this.props.mediaType : ''
               }...`}</Loader>
             </Dimmer>
@@ -135,6 +136,7 @@ class SpotifyButton extends Component {
               scrolling
               fluid
               style={{
+                ...defaultStyle,
                 color: 'white',
                 background: 'black',
                 borderRadius: '0'

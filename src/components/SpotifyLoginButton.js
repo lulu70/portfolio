@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Popup } from 'semantic-ui-react'
 import { Keyframes } from 'react-spring'
 import SpotifyIcon from './SpotifyIcon'
+import { defaultStyle, secondaryStyle } from '../styles/styles'
 
 const SpotifyLoginButton = props => {
   const hadleButtonClick = e => {
@@ -20,8 +21,8 @@ const SpotifyLoginButton = props => {
   const Container = Keyframes.Spring({
     show: {
       to: {
+        ...secondaryStyle,
         background: 'rgba(0,0,0,0)',
-        color: '#6fef99',
         size: 35,
         padding: 0
       }
@@ -31,22 +32,22 @@ const SpotifyLoginButton = props => {
         from: {
           background: 'rgba(0,0,0,0)',
           width: 25,
-          color: '#6fef99',
+          ...secondaryStyle,
           size: 30,
           padding: 0
         },
         to: {
           background: 'black',
           width: 300,
-          color: '#6fef99',
+          ...secondaryStyle,
           size: 18,
           padding: 8
         },
         config: { tension: 60, friction: 10 }
       },
       {
-        from: { height: 25, color: '#6fef99', deg: 0 },
-        to: { height: 80, color: '#fff', deg: 360 },
+        from: { height: 25, ...secondaryStyle },
+        to: { height: 80, color: '#fff'},
         config: { tension: 300, friction: 20 }
       }
     ]
@@ -74,16 +75,15 @@ const SpotifyLoginButton = props => {
                 <SpotifyIcon
                   color={styles.color}
                   size={styles.size}
-                  deg={styles.deg}
                 />
               </div>
             }
           >
             <Popup.Content>
               <div
-                className="secondary-color"
                 style={{
-                  fontFamily: 'Montserrat, sans-serif',
+                  ...defaultStyle,
+                  ...secondaryStyle,
                   textAlign: 'center'
                 }}
               >
