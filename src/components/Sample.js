@@ -63,17 +63,17 @@ class Sample extends Component {
 
               <Grid.Column width={1} />
               <Grid.Column verticalAlign="middle" width={7}>
-                <Dimmer.Dimmable
-                  blurring
-                  as={Image}
-                  dimmed={this.state.dimmed}
-                  dimmer={{ active: this.state.dimmed, content: dimmer }}
-                  onMouseEnter={this.handleShowDimmer}
-                  onMouseLeave={this.handleHideDimmer}
-                  size="large"
-                  src={this.props.image}
-                  style={{ border: 'solid black 3px' }}
-                />
+                  <Dimmer.Dimmable
+                    blurring
+                    as={Image}
+                    dimmed={this.state.dimmed}
+                    dimmer={{ active: this.state.dimmed, content: dimmer }}
+                    onMouseEnter={this.handleShowDimmer}
+                    onMouseLeave={this.handleHideDimmer}
+                    size="large"
+                    src={this.props.image}
+                    style={{ border: 'solid black 3px' }}
+                  />
               </Grid.Column>
               <Grid.Column textAlign="center" width={7}>
                 <div
