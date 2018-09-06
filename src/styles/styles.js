@@ -11,7 +11,13 @@ export const secondaryStyle = {
     color: '#6fef99'
 }
 
-export const colors ={
+export const colors = {
     primary: '#1e2736',
     secondary: '#6fef99'
+}
+
+export const flexStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
 }

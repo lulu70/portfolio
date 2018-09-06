@@ -1,89 +1,59 @@
 import React, { Component } from 'react'
-import { Transition, Trail } from 'react-spring'
+import { Parallax, ParallaxLayer } from 'react-spring'
+import _ from 'lodash'
+import uuid from 'uuid'
+
+const Layer = ({ background, left, offset = 1.1, speed = 0.6 }) => (
+  <ParallaxLayer offset={offset} speed={speed}>
+    <div
+      style={{
+        width: '20px',
+        height: '20px',
+        position: 'absolute',
+        background,
+        left,
+        borderRadius: '50%'
+      }}
+    />
+  </ParallaxLayer>
+)
 
 class TransitionTest extends Component {
   state = {
-    clicked: false,
-    x: 0,
-    y: 0,
-    items: [
-      { key: 'a', text: '1', color: 'red', size: 50 },
-      { key: 'b', text: '2', color: 'green', size: 50 },
-      { key: 'c', text: '3', color: 'blue', size: 50 }
-    ]
+    to: 1,
+    layers: []
   }
+
+  parallaxRef = React.createRef()
+
   handleClick = () => {
-    // this.setState(state => ({
-    //   items:
-    //     state.items.length === 3
-    //       ? state.items.slice(0, state.items.length - 1)
-    //       : state.items.concat({ key: 'c', text: '3' })
-    // }))
+    this.parallaxRef.current.scrollTo(this.state.to)
+    const layers = _.times(21, i => (
+      <Layer
+        key={uuid.v4()}
+        background={`hsl(${_.random(0, 360)} 100% 50%)`}
+        left={i * 70}
+        offset={_.random(1, 2, true)}
+        speed={_.random(0, 1, true)}
+      />
+    ))
     this.setState(state => ({
-      clicked: !state.clicked
+      to: state.to === 1 ? 0 : (state.to += 1),
+      layers
     }))
   }
-  handleMouseMove = ({ clientX: x, clientY: y }) => {
-    this.setState(() => ({
-      x,
-      y
-    }))
-  }
+
   render() {
     return (
-      <div
-        onClick={this.handleClick}
-        onMouseMove={this.handleMouseMove}
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          background: 'black'
-        }}
-      >
-        {/* <Transition
-          keys={this.state.items.map(item => item.key)}
-          from={{ opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
-          config={{ tension: 100, friction: 60 }}
+      <div style={{ height: '100vh' }} onClick={this.handleClick}>
+        <Parallax
+          pages={2}
+          style={{ height: '100vh' }}
+          ref={this.parallaxRef}
+          scrolling={false}
         >
-          {this.state.items.map(item => styles => (
-            <div
-              style={{
-                ...styles,
-                background: item.color,
-                width: item.size,
-                height: item.size
-              }}
-            >
-              {item.text}
-            </div>
-          ))}
-        </Transition> */}
-        <Trail
-          keys={this.state.items.map(item => item.key)}
-          from={{ opacity: 0, x: 0 }}
-          to={
-            this.state.clicked ? { opacity: 1, x: this.state.x } : { opacity: 0, x: 0 }
-          }
-          config={{ tension: 200, friction: 20 }}
-          onRest={this.handleClick}
-        >
-          {this.state.items.map(item => styles => (
-            <div
-              style={{
-                opacity: styles.opacity,
-                left: `translateX(${styles.x}px)`,
-                background: item.color,
-                width: item.size,
-                height: item.size
-              }}
-            >
-              {item.text}
-            </div>
-          ))}
-        </Trail>
+          {this.state.layers.map(layer => layer)}
+        </Parallax>
       </div>
     )
   }
