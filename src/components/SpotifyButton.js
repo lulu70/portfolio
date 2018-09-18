@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import queryString from 'query-string'
 import { Loader, Dimmer, Dropdown } from 'semantic-ui-react'
-import { connect } from 'react-redux'
 import SpotifyIcon from './SpotifyIcon'
 import { defaultStyle } from '../styles/styles'
+import MainContextConsumer from '../context/MainContextConsumer'
 
 class SpotifyButton extends Component {
+
   componentDidMount() {
     const token = queryString.parse(window.location.search).access_token
-    if (token) this.props.setToken(token)
+    if (token) this.props.setSpotifyToken(token)
   }
   componentDidUpdate(preProps) {
     if (preProps.loggedIn !== this.props.loggedIn) {
@@ -172,55 +173,9 @@ class SpotifyButton extends Component {
     )
   }
 }
-const mapStateToProps = state => ({
-  token: state.spotify.token,
-  loggedIn: state.spotify.loggedIn,
-  items: state.spotify.items,
-  itemIndex: state.spotify.itemIndex,
-  userId: state.spotify.userId,
-  itemId: state.spotify.itemId,
-  hasLoaded: state.spotify.hasLoaded,
-  mediaType: state.spotify.mediaType
-})
-const mapDispatchToProps = dispatch => ({
-  setToken: token => {
-    dispatch({
-      type: 'SET_SPOTIFY_TOKEN',
-      token
-    })
-  },
-  gotItems: (userId, itemId, items, itemIndex) => {
-    dispatch({
-      type: 'GOT_ITEMS',
-      userId,
-      itemId,
-      items,
-      itemIndex
-    })
-  },
-  changeItem: (userId, itemId, itemIndex) => {
-    dispatch({
-      type: 'CHANGE_ITEM',
-      userId,
-      itemId,
-      itemIndex
-    })
-  },
-  spotifyButtonLoaded: state => {
-    dispatch({
-      type: 'SPOTIFY_BUTTON_LOADED',
-      state
-    })
-  },
-  changeMediaType: mediaType => {
-    dispatch({
-      type: 'CHANGE_MEDIA_TYPE',
-      mediaType
-    })
-  }
-})
-const SpotifyButtonContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SpotifyButton)
-export default SpotifyButtonContainer
+
+export default props => (
+  <MainContextConsumer>
+    {({spotifyContext}) => <SpotifyButton {...props} {...spotifyContext} />}
+  </MainContextConsumer>
+)

@@ -6,10 +6,12 @@ import 'semantic-ui-css/semantic.min.css'
 import registerServiceWorker from './registerServiceWorker'
 import store from './redux/redux.js'
 import { Provider } from 'react-redux'
-
+import MainContextProvider from './context/MainContextProvider'
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <MainContextProvider>
+      <App />
+    </MainContextProvider>
   </Provider>,
   document.getElementById('root')
 )

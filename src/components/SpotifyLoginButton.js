@@ -1,14 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Popup } from 'semantic-ui-react'
 import { Keyframes } from 'react-spring'
 import SpotifyIcon from './SpotifyIcon'
 import { defaultStyle, secondaryStyle } from '../styles/styles'
+import MainContextConsumer from '../context/MainContextConsumer'
 
 const SpotifyLoginButton = props => {
   const hadleButtonClick = e => {
     e.preventDefault()
-    props.toggleLoadingAnimation()
+    props.spotifyLoginButtonToggleAnimation()
   }
 
   const onRest = ele => {
@@ -47,7 +47,7 @@ const SpotifyLoginButton = props => {
       },
       {
         from: { height: 25, ...secondaryStyle },
-        to: { height: 80, color: '#fff'},
+        to: { height: 80, color: '#fff' },
         config: { tension: 300, friction: 20 }
       }
     ]
@@ -72,10 +72,7 @@ const SpotifyLoginButton = props => {
                   background: styles.background
                 }}
               >
-                <SpotifyIcon
-                  color={styles.color}
-                  size={styles.size}
-                />
+                <SpotifyIcon color={styles.color} size={styles.size} />
               </div>
             }
           >
@@ -97,20 +94,10 @@ const SpotifyLoginButton = props => {
     )
   )
 }
-
-const mapDispatchToProps = dispatch => ({
-  toggleLoadingAnimation: () => {
-    dispatch({
-      type: 'SPOTIFY_LOGIN_BUTTON_TOOGLE_ANIMATION'
-    })
-  }
-})
-const mapStateToProps = state => ({
-  loggedIn: state.spotify.loggedIn,
-  loading: state.spotify.loading
-})
-const SpotifyLoginButtonContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SpotifyLoginButton)
-export default SpotifyLoginButtonContainer
+export default props => (
+  <MainContextConsumer>
+    {({ spotifyContext }) => (
+      <SpotifyLoginButton {...props} {...spotifyContext} />
+    )}
+  </MainContextConsumer>
+)
