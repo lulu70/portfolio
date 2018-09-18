@@ -4,6 +4,7 @@ import AppContainer from './components/AppContainer'
 import { defaultStyle, colors } from './styles/styles'
 
 class App extends Component {
+
   render() {
     return (
       <div

@@ -10,23 +10,6 @@ import uuid from 'uuid'
 const samplesArray = [
   {
     id: uuid.v4(),
-    image: ESOC2018Image,
-    link: 'http://www.tpi-webcast.com/ESOC2018',
-    title: 'ESOC 2018',
-    description: (
-      <p>
-        This project is a video lectures website with lectures recorded from a
-        live event. It was built using react/redux technologies and firebase
-        realtime database. For this project there was a need for a CMS system
-        that I've built for uploading the video links for this project and
-        future ones.
-      </p>
-    ),
-    bg: 'dark',
-    logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
-  },
-  {
-    id: uuid.v4(),
     image: theRealThing,
     link: 'https://the-real-thing.leoniko.net/',
     title: 'The Real Thing',
@@ -43,6 +26,24 @@ const samplesArray = [
     bg: 'light',
     logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
   },
+  {
+    id: uuid.v4(),
+    image: ESOC2018Image,
+    link: 'http://www.tpi-webcast.com/ESOC2018',
+    title: 'ESOC 2018',
+    description: (
+      <p>
+        This project is a video lectures website with lectures recorded from a
+        live event. It was built using react/redux technologies and firebase
+        realtime database. For this project there was a need for a CMS system
+        that I've built for uploading the video links for this project and
+        future ones.
+      </p>
+    ),
+    bg: 'dark',
+    logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
+  },
+
   {
     id: uuid.v4(),
     image: lensItImage,
