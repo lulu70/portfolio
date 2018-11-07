@@ -1,6 +1,6 @@
 import React from 'react'
 import CreditBatch from './CreditBatch'
-import { Grid, Divider } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import { secondaryStyle, defaultStyle  } from '../styles/styles'
 const Footer = () => (
   <div style={{ width: '100%', minHeight: '10rem', marginTop: '14px' }}>
@@ -14,14 +14,6 @@ const Footer = () => (
           >
             info@leoniko.net
           </a>
-          <Divider hidden />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            dignissimos dolorum dolorem sit eveniet debitis. Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Explicabo dignissimos dolorum
-            dolorem sit eveniet debitis. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Explicabo
-          </p>
           <div style={{ fontSize: '0.8rem' }}>
             Background Photo by :
             <span>

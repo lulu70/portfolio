@@ -15,12 +15,9 @@ const samplesArray = [
     title: 'The Real Thing',
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-        minima atque facilis numquam commodi officiis accusantium asperiores
-        placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-        reiciendis cum possimus ipsam quis. Quam vero sapiente, obcaecati
-        recusandae blanditiis provident rem nisi alias quia veniam non fugit
-        cumque asperiores at aliquam voluptatibus.
+        This project is a sample website that I made using react/redux for a realestate company.  
+        Ive also created a CMS system using react and firebase to upload and edit posts for new offers.
+        The website features two languages - English and German.
       </p>
     ),
     bg: 'light',
@@ -51,12 +48,9 @@ const samplesArray = [
     title: 'Lensit',
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-        minima atque facilis numquam commodi officiis accusantium asperiores
-        placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-        reiciendis cum possimus ipsam quis. Quam vero sapiente, obcaecati
-        recusandae blanditiis provident rem nisi alias quia veniam non fugit
-        cumque asperiores at aliquam voluptatibus.
+        This project is a tool for calculating lens factors of video projectors. 
+        It was build using react as a web tool and later as a native windows and mac applications 
+        using electron.  
       </p>
     ),
     bg: 'dark',
@@ -69,12 +63,8 @@ const samplesArray = [
     title: 'WSAVA 2017',
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-        minima atque facilis numquam commodi officiis accusantium asperiores
-        placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-        reiciendis cum possimus ipsam quis. Quam vero sapiente, obcaecati
-        recusandae blanditiis provident rem nisi alias quia veniam non fugit
-        cumque asperiores at aliquam voluptatibus.
+        This project is a video lectures website with lectures recorded from a
+        live event. It was built using wordpres.
       </p>
     ),
     bg: 'light',
@@ -87,12 +77,9 @@ const samplesArray = [
     title: 'Timer',
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-        minima atque facilis numquam commodi officiis accusantium asperiores
-        placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-        reiciendis cum possimus ipsam quis. Quam vero sapiente, obcaecati
-        recusandae blanditiis provident rem nisi alias quia veniam non fugit
-        cumque asperiores at aliquam voluptatibus.
+        This project is a timer tool that allow you to save the times for relaunching. 
+        It was build using react as a web tool and later as a native windows and mac applications 
+        using electron. 
       </p>
     ),
     bg: 'dark',
@@ -105,12 +92,8 @@ const samplesArray = [
     title: 'Smoke',
     description: (
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta veniam
-        minima atque facilis numquam commodi officiis accusantium asperiores
-        placeat consequuntur quasi perspiciatis, quam rerum iste quaerat
-        reiciendis cum possimus ipsam quis. Quam vero sapiente, obcaecati
-        recusandae blanditiis provident rem nisi alias quia veniam non fugit
-        cumque asperiores at aliquam voluptatibus.
+        This project is a creative coding experiment i made using p5js.
+        Its a particle system demonstration built with an object-oriented design. 
       </p>
     ),
     bg: 'light',

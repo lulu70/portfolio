@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Transition, Spring, animated } from 'react-spring'
-import bgImage from '../assets/codeBG.png'
+import { Spring } from 'react-spring'
+import bgImage from '../assets/bg.jpg'
 import samplesArray from '../hardCoded/smaples'
 import Sample from '../components/Sample'
 import { interpolate } from 'flubber'
@@ -66,40 +66,18 @@ class SamplesContainer extends Component {
               text={this.state.showAllSamples ? ' Show Less' : 'Show More'}
               handleShowAllClick={this.handleShowAllClick}
             />
-            <Transition
-              native
-              keys={this.state.samples.map(sample => sample.id)}
-              config={{ tension: 300, friction: 50 }}
-              from={{
-                opacity: 0,
-                maxHeight: 0,
-                scale: this.state.showAllSamples ? 0 : 1
-              }}
-              leave={{ opacity: 0, maxHeight: 0, scale: 0 }}
-              enter={{ opacity: 1, maxHeight: 600, scale: 1 }}
-            >
-              {this.state.samples.map((sample, i) => styles => (
-                <animated.div
-                  style={{
-                    ...styles,
-                    transform: `scaleY(${styles.scale})`,
-                    WebkitTransform: `scaleY(${styles.scale})`,
-                    MsTransform: `scaleY(${styles.scale})`
-                  }}
-                  onMouseEnter={() => this.handleMouseEnter(sample.id)}
-                  onMouseLeave={this.handleMouseLeave}
-                >
-                  <Sample
-                    {...sample}
-                    active={this.state.activeId === sample.id}
-                    onSamples={this.state.activeId}
-                  />
-                  {this.state.samples.length - 1 !== i && (
-                    <div style={{ height: '35px' }} />
-                  )}
-                </animated.div>
-              ))}
-            </Transition>
+            {this.state.samples.map((sample, i) => (
+              <React.Fragment key={sample.id}>
+                <Sample
+                  {...sample}
+                  active={this.state.activeId === sample.id}
+                  onSamples={this.state.activeId}
+                />
+                {this.state.samples.length - 1 !== i && (
+                  <div style={{ height: '35px' }} />
+                )}
+              </React.Fragment>
+            ))}
             <ShowMore
               interpolator={interpolator}
               t={t}

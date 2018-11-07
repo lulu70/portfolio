@@ -3,22 +3,22 @@ import React from 'react'
 const CreditBatch = () => (
   <a
     style={{
-      backgroundColor: '#1f2836',
+      backgroundColor: '#1e2736',
       color: 'white',
       textDecoration: 'none',
       padding: '4px 6px',
       fontFamily:
         '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif',
-      fontSize: '0.8rem',
+      fontSize: 12,
       fontWeight: 'bold',
       lineHeight: '1.2',
       display: 'inline-block',
       borderRadius: 3
     }}
-    href="https://unsplash.com/@casparrubin?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge"
+    href="https://unsplash.com/@avkshift?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge"
     target="_blank"
     rel="noopener noreferrer"
-    title="Download free do whatever you want high-resolution photos from Caspar Rubin"
+    title="Download free do whatever you want high-resolution photos from Victor Aznabaev"
   >
     <span style={{ display: 'inline-block', padding: '2px 3px' }}>
       <svg
@@ -38,7 +38,7 @@ const CreditBatch = () => (
       </svg>
     </span>
     <span style={{ display: 'inline-block', padding: '2px 3px' }}>
-      Caspar Rubin
+      Victor Aznabaev
     </span>
   </a>
 )
