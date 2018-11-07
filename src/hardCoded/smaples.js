@@ -15,9 +15,9 @@ const samplesArray = [
     title: 'The Real Thing',
     description: (
       <p>
-        This project is a sample website that I made using react/redux for a realestate company.  
-        Ive also created a CMS system using react and firebase to upload and edit posts for new offers.
-        The website features two languages - English and German.
+        This project is a sample website that I made using react/redux for a realestate company. <br />  
+        Ive also created a CMS system using react and firebase to upload and edit posts for new offers. <br />
+        The website features two languages - English and German. 
       </p>
     ),
     bg: 'light',
@@ -31,8 +31,8 @@ const samplesArray = [
     description: (
       <p>
         This project is a video lectures website with lectures recorded from a
-        live event. It was built using react/redux technologies and firebase
-        realtime database. For this project there was a need for a CMS system
+        live event. <br /> It was built using react/redux technologies and firebase
+        realtime database. <br /> For this project there was a need for a CMS system
         that I've built for uploading the video links for this project and
         future ones.
       </p>
@@ -48,7 +48,7 @@ const samplesArray = [
     title: 'Lensit',
     description: (
       <p>
-        This project is a tool for calculating lens factors of video projectors. 
+        This project is a tool for calculating lens factors of video projectors.  <br />
         It was build using react as a web tool and later as a native windows and mac applications 
         using electron.  
       </p>
@@ -64,7 +64,7 @@ const samplesArray = [
     description: (
       <p>
         This project is a video lectures website with lectures recorded from a
-        live event. It was built using wordpres.
+        live event. <br /> It was built using wordpres.
       </p>
     ),
     bg: 'light',
@@ -77,7 +77,7 @@ const samplesArray = [
     title: 'Timer',
     description: (
       <p>
-        This project is a timer tool that allow you to save the times for relaunching. 
+        This project is a timer tool that allow you to save the times for relaunching.  <br />
         It was build using react as a web tool and later as a native windows and mac applications 
         using electron. 
       </p>
@@ -92,7 +92,7 @@ const samplesArray = [
     title: 'Smoke',
     description: (
       <p>
-        This project is a creative coding experiment i made using p5js.
+        This project is a creative coding experiment i made using p5js. <br />
         Its a particle system demonstration built with an object-oriented design. 
       </p>
     ),

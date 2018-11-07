@@ -85,7 +85,7 @@ class Sample extends Component {
                     height: '100%'
                   }}
                 >
-                  <div className="text">
+                  <div className="text" style={{textAlign: 'left'}}>
                     <h1 style={defaultStyle}>{this.props.title}</h1>
                     {this.props.description}
                   </div>
@@ -113,7 +113,7 @@ class Sample extends Component {
                     height: '100%'
                   }}
                 >
-                  <div className="text">
+                  <div className="text" style={{textAlign: 'left'}}>
                     <h1 style={defaultStyle}>{this.props.title}</h1>
                     {this.props.description}
                   </div>
