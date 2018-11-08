@@ -15,14 +15,14 @@ const Footer = () => (
             info@leoniko.net
           </a>
           <div style={{ fontSize: '0.8rem' }}>
-            Background Photo by :
+            Background Photo by:
             <span>
               <CreditBatch />
             </span>
             <div>
-              Icons made by
+              Icons made by:  
               <a
-                style={secondaryStyle}
+                style={{...secondaryStyle, marginLeft: '2px'}}
                 href="https://www.flaticon.com/authors/dave-gandy"
                 title="Dave Gandy"
                 target="_blank"

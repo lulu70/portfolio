@@ -22,14 +22,14 @@ const About = () => (
         <Divider hidden />
         <p
           style={{
-            fontSize: '1.5rem'
+            fontSize: '1.8rem'
           }}
         >
-          I've made this website to show some of my work as a web developer.
+          I've made this website to show some of my work.
           <br />
-          It has some examples of websites and projects that I did
+          It has some examples of projects that I did.
           <br />
-          Check it out and contact me for anything.
+          Have a look.
         </p>
       </Grid.Column>
     </Grid.Row>
