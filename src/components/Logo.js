@@ -1,6 +1,8 @@
 import React from 'react'
 import { Image, Icon } from 'semantic-ui-react'
 import reduxLogo from '../assets/reduxLogo.png'
+import graphqlLogo from '../assets/graphqlLogo.png'
+import apolloLogo from '../assets/apolloLogo.png'
 import firebaseLogo from '../assets/firebaseLogo.png'
 import electronLogo from '../assets/electronLogo.png'
 import p5Logo from '../assets/p5Logo.png'
@@ -16,6 +18,10 @@ const colors = {
 }
 const Logo = ({ logo, size }) => {
   switch (logo) {
+    case 'graphql':
+     return <Image src={graphqlLogo} style={{ height: '29px' }} />
+    case 'apollo':
+     return <Image src={apolloLogo} style={{ height: '29px' }} />
     case 'redux':
       return <Image src={reduxLogo} style={{ height: '29px' }} />
     case 'firebase':

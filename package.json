@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://leoniko.net/",
+  "homepage": "https://www.leoniko.net/",
   "devDependencies": {
     "react-scripts": "1.1.4",
     "redux-devtools-extension": "^2.13.5"
@@ -10,6 +10,7 @@
   "dependencies": {
     "delay": "^3.1.0",
     "flubber": "^0.4.2",
+    "gh-pages": "^2.0.1",
     "gsap": "^2.0.2",
     "npm": "^6.2.0",
     "react": "^16.4.1",
@@ -23,6 +24,8 @@
     "semantic-ui-react": "^0.82.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

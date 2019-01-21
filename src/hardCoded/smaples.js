@@ -4,6 +4,7 @@ import smokeImage from '../assets/samples/smoke.png'
 import TimerImage from '../assets/samples/Timer.png'
 import ESOC2018Image from '../assets/samples/ESOC2018.png'
 import theRealThing from '../assets/samples/theRealThing.png'
+import chatroom from '../assets/samples/chatroom.png'
 import lensItImage from '../assets/samples/Lensit.png'
 import uuid from 'uuid'
 
@@ -22,6 +23,20 @@ const samplesArray = [
     ),
     bg: 'light',
     logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
+  },
+  {
+    id: uuid.v4(),
+    image: chatroom,
+    link: 'https://chat-room.leoniko.net/',
+    title: 'Chat Room',
+    description: (
+      <p>
+        This project is a sample chat room app that I made using react, graphql and firebase.<br />
+        I've implemented a signup/login system using firebase auth and an apollo server with graphql subscribtions to handle the messages and files .  
+      </p>
+    ),
+    bg: 'light',
+    logos: ['html5', 'css3', 'js', 'node js', 'react', 'firebase', 'graphql', 'apollo']
   },
   {
     id: uuid.v4(),
