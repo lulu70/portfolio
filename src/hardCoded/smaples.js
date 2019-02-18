@@ -38,23 +38,23 @@ const samplesArray = [
     bg: 'light',
     logos: ['html5', 'css3', 'js', 'node js', 'react', 'firebase', 'graphql', 'apollo']
   },
-  {
-    id: uuid.v4(),
-    image: ESOC2018Image,
-    link: 'http://www.tpi-webcast.com/ESOC2018',
-    title: 'ESOC 2018',
-    description: (
-      <p>
-        This project is a video lectures website with lectures recorded from a
-        live event. <br /> It was built using react/redux technologies and firebase
-        realtime database. <br /> For this project there was a need for a CMS system
-        that I've built for uploading the video links for this project and
-        future ones.
-      </p>
-    ),
-    bg: 'dark',
-    logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
-  },
+  // {
+  //   id: uuid.v4(),
+  //   image: ESOC2018Image,
+  //   link: 'http://www.tpi-webcast.com/ESOC2018',
+  //   title: 'ESOC 2018',
+  //   description: (
+  //     <p>
+  //       This project is a video lectures website with lectures recorded from a
+  //       live event. <br /> It was built using react/redux technologies and firebase
+  //       realtime database. <br /> For this project there was a need for a CMS system
+  //       that I've built for uploading the video links for this project and
+  //       future ones.
+  //     </p>
+  //   ),
+  //   bg: 'dark',
+  //   logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
+  // },
 
   {
     id: uuid.v4(),
@@ -71,20 +71,20 @@ const samplesArray = [
     bg: 'dark',
     logos: ['html5', 'css3', 'js', 'node js', 'react', 'electron']
   },
-  {
-    id: uuid.v4(),
-    image: WSAVA2017Image,
-    link: 'http://www.tpi-webcast.com/WSAVA2017/',
-    title: 'WSAVA 2017',
-    description: (
-      <p>
-        This project is a video lectures website with lectures recorded from a
-        live event. <br /> It was built using wordpres.
-      </p>
-    ),
-    bg: 'light',
-    logos: ['wordpress', 'css3']
-  },
+  // {
+  //   id: uuid.v4(),
+  //   image: WSAVA2017Image,
+  //   link: 'http://www.tpi-webcast.com/WSAVA2017/',
+  //   title: 'WSAVA 2017',
+  //   description: (
+  //     <p>
+  //       This project is a video lectures website with lectures recorded from a
+  //       live event. <br /> It was built using wordpres.
+  //     </p>
+  //   ),
+  //   bg: 'light',
+  //   logos: ['wordpress', 'css3']
+  // },
   {
     id: uuid.v4(),
     image: TimerImage,
