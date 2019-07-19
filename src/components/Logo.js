@@ -5,6 +5,8 @@ import graphqlLogo from '../assets/graphqlLogo.png'
 import apolloLogo from '../assets/apolloLogo.png'
 import firebaseLogo from '../assets/firebaseLogo.png'
 import electronLogo from '../assets/electronLogo.png'
+import reactNative from '../assets/reactNativeLogo.png'
+import expo from '../assets/expoLogo.png'
 import p5Logo from '../assets/p5Logo.png'
 const colors = {
   js: '#f0db4f',
@@ -18,10 +20,14 @@ const colors = {
 }
 const Logo = ({ logo, size }) => {
   switch (logo) {
+    case 'react-native':
+      return <Image src={reactNative} style={{ height: '29px' }} />
+    case 'expo':
+      return <Image src={expo} style={{ height: '29px' }} />
     case 'graphql':
-     return <Image src={graphqlLogo} style={{ height: '29px' }} />
+      return <Image src={graphqlLogo} style={{ height: '29px' }} />
     case 'apollo':
-     return <Image src={apolloLogo} style={{ height: '29px' }} />
+      return <Image src={apolloLogo} style={{ height: '29px' }} />
     case 'redux':
       return <Image src={reduxLogo} style={{ height: '29px' }} />
     case 'firebase':
@@ -32,10 +38,7 @@ const Logo = ({ logo, size }) => {
       return <Image src={p5Logo} style={{ height: '29px' }} />
     case 'facebook official':
       return (
-        <a
-          href="https://www.facebook.com/lior2"
-          target="blank"
-        >
+        <a href='https://www.facebook.com/lior2' target='blank'>
           <Icon
             name={logo}
             size={size || 'big'}
@@ -43,11 +46,9 @@ const Logo = ({ logo, size }) => {
           />
         </a>
       )
-      case 'mail' : 
+    case 'mail':
       return (
-        <a
-          href="mailto:info@leoniko.net?subject=Mail from SAFE FRAME website"
-        >
+        <a href='mailto:liorco7079@gmail.com?subject=Mail from SAFE FRAME website'>
           <Icon
             name={logo}
             size={size || 'big'}
