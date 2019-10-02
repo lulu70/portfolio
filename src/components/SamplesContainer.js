@@ -10,8 +10,8 @@ import ShowMore from './ShowMore'
 
 class SamplesContainer extends Component {
   state = {
-    showAllSamples: false,
-    samples: samplesArray.slice(0, 1),
+    showAllSamples: true,
+    samples: samplesArray,
     activeId: ''
   }
   handleShowAllClick = () => {

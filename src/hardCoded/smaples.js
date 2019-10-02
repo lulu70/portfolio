@@ -9,6 +9,48 @@ import uuid from 'uuid'
 const samplesArray = [
   {
     id: uuid.v4(),
+    image: lensItImage,
+    link: 'https://lensit.safeframeapps.com',
+    title: 'Lensit',
+    description: (
+      <p>
+        This project is a tool for calculating lens factors of video projectors.{' '}
+        <br />
+        It was build using react as a web tool, as a native windows and mac
+        applications using electron, and as a native app using react-native and
+        expo.
+      </p>
+    ),
+    bg: 'dark',
+    logos: [
+      'html5',
+      'css3',
+      'js',
+      'node js',
+      'react',
+      'electron',
+      'react-native',
+      'expo'
+    ]
+  },
+  {
+    id: uuid.v4(),
+    image: TimerImage,
+    link: 'https://timer.safeframeapps.com',
+    title: 'Timer',
+    description: (
+      <p>
+        This project is a timer tool that allow you to save the times for
+        relaunching. <br />
+        It was build using react as a web tool and later as a native windows and
+        mac applications using electron.
+      </p>
+    ),
+    bg: 'dark',
+    logos: ['html5', 'css3', 'js', 'node js', 'react', 'electron']
+  },
+  {
+    id: uuid.v4(),
     image: theRealThing,
     link: 'https://the-real-thing.safeframeapps.com/',
     title: 'The Real Thing',
@@ -67,33 +109,6 @@ const samplesArray = [
   //   bg: 'dark',
   //   logos: ['html5', 'css3', 'js', 'node js', 'react', 'redux', 'firebase']
   // },
-
-  {
-    id: uuid.v4(),
-    image: lensItImage,
-    link: 'https://lensit.safeframeapps.com',
-    title: 'Lensit',
-    description: (
-      <p>
-        This project is a tool for calculating lens factors of video projectors.{' '}
-        <br />
-        It was build using react as a web tool, as a native windows and mac
-        applications using electron, and as a native app using react-native and
-        expo.
-      </p>
-    ),
-    bg: 'dark',
-    logos: [
-      'html5',
-      'css3',
-      'js',
-      'node js',
-      'react',
-      'electron',
-      'react-native',
-      'expo'
-    ]
-  },
   // {
   //   id: uuid.v4(),
   //   image: WSAVA2017Image,
@@ -108,22 +123,6 @@ const samplesArray = [
   //   bg: 'light',
   //   logos: ['wordpress', 'css3']
   // },
-  {
-    id: uuid.v4(),
-    image: TimerImage,
-    link: 'https://timer.safeframeapps.com',
-    title: 'Timer',
-    description: (
-      <p>
-        This project is a timer tool that allow you to save the times for
-        relaunching. <br />
-        It was build using react as a web tool and later as a native windows and
-        mac applications using electron.
-      </p>
-    ),
-    bg: 'dark',
-    logos: ['html5', 'css3', 'js', 'node js', 'react', 'electron']
-  },
   {
     id: uuid.v4(),
     image: smokeImage,
