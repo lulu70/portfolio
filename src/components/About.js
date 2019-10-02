@@ -4,18 +4,14 @@ import avatar from '../assets/avatar.png'
 import { defaultStyle, primaryStyle, colors } from '../styles/styles'
 
 const About = () => (
-  <Grid
-    padded
-    style={{ ...primaryStyle, background: 'white' }}
-    centered
-  >
+  <Grid padded style={{ ...primaryStyle, background: 'white' }} centered>
     <Grid.Row>
-      <Grid.Column computer={10} mobile={14} textAlign="center">
+      <Grid.Column computer={10} mobile={14} textAlign='center'>
         <h1 style={defaultStyle}>Hi I'm Lior</h1>
         <Image
           src={avatar}
           circular
-          size="small"
+          size='small'
           centered
           style={{ border: `solid 3px ${colors.primary}` }}
         />
@@ -25,11 +21,7 @@ const About = () => (
             fontSize: '1.8rem'
           }}
         >
-          I've made this website to show some of my work.
-          <br />
-          It has some examples of projects that I did.
-          <br />
-          Have a look.
+          Please Take A Look
         </p>
       </Grid.Column>
     </Grid.Row>
