@@ -11,4 +11,4 @@ ReactDOM.render(
   </MainContextProvider>,
   document.getElementById('root')
 )
-registerServiceWorker()
+// registerServiceWorker()
