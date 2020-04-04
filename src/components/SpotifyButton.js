@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import queryString from 'query-string'
+import queryString from 'querystring'
 import { Loader, Dimmer, Dropdown } from 'semantic-ui-react'
 import SpotifyIcon from './SpotifyIcon'
 import { defaultStyle } from '../styles/styles'
 import MainContextConsumer from '../context/MainContextConsumer'
 
 class SpotifyButton extends Component {
-
   componentDidMount() {
     const token = queryString.parse(window.location.search).access_token
     if (token) this.props.setSpotifyToken(token)
@@ -21,14 +20,14 @@ class SpotifyButton extends Component {
     const headers = {
       Accept: 'application/json',
       Authorization: `Bearer ${this.props.token}`,
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     }
     try {
       //trying to get playlists:
       let response = await fetch(
         `https://api.spotify.com/v1/me/playlists?limit=50`,
         {
-          headers
+          headers,
         }
       )
       let json = await response.json()
@@ -37,7 +36,7 @@ class SpotifyButton extends Component {
         response = await fetch(
           `https://api.spotify.com/v1/me/albums?limit=50`,
           {
-            headers
+            headers,
           }
         )
         json = await response.json()
@@ -48,7 +47,7 @@ class SpotifyButton extends Component {
         response = await fetch(
           `https://api.spotify.com/v1/me/tracks?limit=50`,
           {
-            headers
+            headers,
           }
         )
         json = await response.json()
@@ -61,10 +60,10 @@ class SpotifyButton extends Component {
           items: [
             {
               track: {
-                id: '0IDk2BLXypQbSK6yi4ekuH'
-              }
-            }
-          ]
+                id: '0IDk2BLXypQbSK6yi4ekuH',
+              },
+            },
+          ],
         }
       }
       const items = json.items
@@ -75,8 +74,8 @@ class SpotifyButton extends Component {
         this.props.mediaType === 'playlists'
           ? item.id
           : this.props.mediaType === 'albums'
-            ? item.album.id
-            : item.track.id
+          ? item.album.id
+          : item.track.id
       this.props.gotItems(userId, itemId, items, itemIndex)
     } catch (error) {
       console.log(error)
@@ -91,38 +90,36 @@ class SpotifyButton extends Component {
       this.props.mediaType === 'playlists'
         ? newItem.id
         : this.props.mediaType === 'albums'
-          ? newItem.album.id
-          : newItem.track.id
+        ? newItem.album.id
+        : newItem.track.id
     this.props.changeItem(userId, itemId, newIndex)
   }
-  capitalize = string => string[0].toUpperCase() + string.slice(1)
+  capitalize = (string) => string[0].toUpperCase() + string.slice(1)
   render() {
     return (
       this.props.itemId && (
         <React.Fragment>
           <iframe
             onLoad={() => this.props.spotifyButtonLoaded(true)}
-            title="spotify-button"
+            title='spotify-button'
             src={
               this.props.mediaType === 'playlists'
-                ? `https://open.spotify.com/embed/user/${
-                    this.props.userId
-                  }/playlist/${this.props.itemId}`
+                ? `https://open.spotify.com/embed/user/${this.props.userId}/playlist/${this.props.itemId}`
                 : this.props.mediaType === 'albums'
-                  ? `https://open.spotify.com/embed/album/${this.props.itemId}`
-                  : `https://open.spotify.com/embed/track/${this.props.itemId}`
+                ? `https://open.spotify.com/embed/album/${this.props.itemId}`
+                : `https://open.spotify.com/embed/track/${this.props.itemId}`
             }
-            width="300"
-            height="80"
-            frameBorder="0"
-            allowtransparency="true"
-            allow="encrypted-media"
+            width='300'
+            height='80'
+            frameBorder='0'
+            allowtransparency='true'
+            allow='encrypted-media'
           />
 
           {!this.props.hasLoaded ? (
             <Dimmer active>
               <SpotifyIcon
-                color="#fff"
+                color='#fff'
                 style={{ position: 'absolute', top: '8px', right: '8px' }}
               />
               <Loader indeterminate style={defaultStyle}>{`Loading ${
@@ -140,7 +137,7 @@ class SpotifyButton extends Component {
                 ...defaultStyle,
                 color: 'white',
                 background: 'black',
-                borderRadius: '0'
+                borderRadius: '0',
               }}
               selectOnBlur={false}
               onChange={this.handleItemSelect}
@@ -150,11 +147,11 @@ class SpotifyButton extends Component {
                   this.props.mediaType === 'playlists'
                     ? item.name
                     : this.props.mediaType === 'albums'
-                      ? item.album.name
-                      : this.props.mediaType === 'tracks'
-                        ? item.track.name
-                        : '',
-                value: i
+                    ? item.album.name
+                    : this.props.mediaType === 'tracks'
+                    ? item.track.name
+                    : '',
+                value: i,
               }))}
             />
           ) : (
@@ -162,7 +159,7 @@ class SpotifyButton extends Component {
               style={{
                 fontSize: '1.1rem',
                 background: 'black',
-                textAlign: 'center'
+                textAlign: 'center',
               }}
             >
               Couldnt Get Music From Your Library
@@ -174,8 +171,8 @@ class SpotifyButton extends Component {
   }
 }
 
-export default props => (
+export default (props) => (
   <MainContextConsumer>
-    {({spotifyContext}) => <SpotifyButton {...props} {...spotifyContext} />}
+    {({ spotifyContext }) => <SpotifyButton {...props} {...spotifyContext} />}
   </MainContextConsumer>
 )
