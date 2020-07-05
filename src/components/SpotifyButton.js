@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import queryString from 'querystring'
 import { Loader, Dimmer, Dropdown } from 'semantic-ui-react'
 import SpotifyIcon from './SpotifyIcon'
 import { defaultStyle } from '../styles/styles'
@@ -7,7 +6,8 @@ import MainContextConsumer from '../context/MainContextConsumer'
 
 class SpotifyButton extends Component {
   componentDidMount() {
-    const token = queryString.parse(window.location.search).access_token
+    const urlParams = new URLSearchParams(window.location.search)
+    const token = urlParams.get('access_token')
     if (token) this.props.setSpotifyToken(token)
   }
   componentDidUpdate(preProps) {
