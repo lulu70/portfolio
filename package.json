@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://www.safeframeapps.com/",
   "devDependencies": {
-    "react-scripts": "1.1.4",
+    "react-scripts": "5.0.1",
     "redux-devtools-extension": "^2.13.5"
   },
   "dependencies": {
